@@ -1,9 +1,83 @@
+button {
+  padding: 10px;
+  margin: 0px;
+  color: #333;
+  font-weight: bolder;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  cursor: pointer;
+  width: 322px;
+  margin-bottom: 10px;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:hover {
+  color: #333;
+  border: 1px solid #ccc;
+  background-color: #e4e3e3;
+}
+
+button.btn-submit {
+  color: #fff;
+  border: 1px solid #ccc;
+  background-color: #85c99d;
+}
+
+button.btn-submit:hover {
+  color: #fff;
+  border: 1px solid #ccc;
+  background-color: #76b88d;
+}
+
+button.btn-reset {
+  color: #fff;
+  border: 1px solid #ccc;
+  background-color: #eb5853;
+}
+
+button.btn-reset:hover {
+  color: #fff;
+  border: 1px solid #ccc;
+  background-color: rgb(223, 92, 88);
+}
+
+button.btn-download {
+  color: #fff;
+  border: 1px solid #337ab7;
+  background-color: #337ab7;
+}
+
+button.btn-download:hover {
+  color: #fff;
+  border: 1px solid #337ab7;
+  background-color: #2d6fa8;
+}
+
+button.disabled {
+  color: #fff;
+  border: 1px solid rgb(235, 235, 235);
+  background-color: #e9e9e9;
+  cursor: not-allowed;
+}
+
+button.disabled:hover {
+  color: #fff;
+  border: 1px solid rgb(235, 235, 235);
+  background-color: #d8d8d8;
+  cursor: not-allowed;
+}
+
 #app-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 40px;
+  height: 100%;
 }
 
 #app-container .input-fields {
@@ -11,6 +85,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+form h3 {
+  padding-bottom: 20px;
 }
 
 #app-container .input-fields input {
@@ -23,17 +101,12 @@
   text-align: center;
 }
 
-#app-container button {
-  padding: 10px;
-  margin: 0px;
-  color: #fff;
-  font-weight: bolder;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  background-color: #85c99d;
-  cursor: pointer;
-  width: 322px;
-  margin-bottom: 10px;
+#app-container .input-fields input:focus {
+  outline: none;
+}
+
+#app-container .input-fields input::placeholder {
+  color: #ccc;
 }
 
 #html-to-png {

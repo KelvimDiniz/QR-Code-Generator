@@ -39,22 +39,6 @@ function App() {
     downloadLink.download = 'generated_qrcode.png';
     downloadLink.click();
   };
-
-  const shareToWhatsApp = async () => {
-
-    const qrCodeElement = document.getElementById('html-to-png');
-
-    if ( !qrCodeElement ) return;
-
-    const canvas = await html2canvas(qrCodeElement);
-
-    const pngDataUrl = canvas.toDataURL('image/png');
-
-    // Create a WhatsApp Web Share link
-    const whatsappLink = `https://api.whatsapp.com/send?text=Check%20out%20this%20QR%20code&data=${encodeURIComponent(pngDataUrl)}`;
-
-    window.open(whatsappLink);
-  };
   
   return (
     <div id="app-container">
@@ -104,40 +88,7 @@ function App() {
       />
     </div>
     <button onClick={ handleGeneratePNG }>Baixar QR-Code</button> 
-    <button onClick={ shareToWhatsApp }>Compartilhar QR-Code</button> 
     </div>
-  );
-}
-
-interface GeneratePNGModalProps {
-  onGeneratePNG: (title: string, description: string) => void;
-}
-
-const GeneratePNGModal: React.FC<GeneratePNGModalProps> = ({ onGeneratePNG }) => {
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-
-  const handleGenerateClick = () => {
-    onGeneratePNG(title, description);
-  };
-
-  return (
-      <>
-      <h2>Generate PNG</h2>
-      <input
-        type="text"
-        placeholder="Title"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="Description"
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-      />
-      <button onClick={handleGenerateClick}>Generate and Download</button>
-      </>
   );
 }
 

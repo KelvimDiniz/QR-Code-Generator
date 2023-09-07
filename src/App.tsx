@@ -14,6 +14,8 @@ interface InputValues {
 
 const App = () => {
 
+
+
   const [inputValues, setInputValues] = useState<InputValues>({
     eventName: "",
     setorName: "",
@@ -44,6 +46,8 @@ const App = () => {
     downloadLink.download = 'generated_qrcode.png';
     downloadLink.click();
   };
+
+  const maskedPrimaryServer = inputValues.primaryServer.substring(10);
   
   return (
   <div id="app-container">
@@ -54,8 +58,7 @@ const App = () => {
             <h4 children={ inputValues.setorName }/>
               <QRCode size={ 300 } value={JSON.stringify(inputValues)} />
             <p children={ `${ inputValues.readerUsername } | ${ inputValues.readerPassword }` }/>
-            <p children={ inputValues.primaryServer }/>
-            
+            <p children={ maskedPrimaryServer }/>
         </div>
         <button className='btn-edit' onClick={ handleShowQRCode }>Editar QR-Code</button>
         <button className='btn-download' onClick={ handleGeneratePNG }>Baixar QR-Code</button>

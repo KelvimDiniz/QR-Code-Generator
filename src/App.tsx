@@ -52,10 +52,10 @@ const App = () => {
     { showQRCode ?
     <>
           <div id='html-to-png' >
-            <h2 children={ inputValues.eventName }/>
-            <h4 children={ inputValues.setorName }/>
+            <h2 children={ `Evento: ${ inputValues.eventName }` }/>
+            <h4 children={ `Setor: ${ inputValues.setorName }` }/>
               <QRCode size={ 300 } value={JSON.stringify(inputValues)} />
-            <p children={ `${ inputValues.readerUsername } | ${ inputValues.readerPassword }` }/>
+            <p children={ `Usuário: ${ inputValues.readerUsername } | Senha: ${ inputValues.readerPassword }` }/>
         </div>
         <button className='btn-edit' onClick={ handleShowQRCode }>Editar QR-Code</button>
         <button className='btn-download' onClick={ handleGeneratePNG }>Baixar QR-Code</button>
@@ -66,7 +66,7 @@ const App = () => {
         setInputValues(values); 
         handleShowQRCode();
       }
-    }   
+    }
   />
     }
   </div>

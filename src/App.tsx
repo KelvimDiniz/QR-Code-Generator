@@ -1,4 +1,4 @@
-import React, { memo, useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import QRCode from 'qrcode.react';
 import html2canvas from 'html2canvas';
@@ -90,7 +90,7 @@ const InputField: React.FC<{data: InputValues, onSubmit: (InputValues: InputValu
     if ( !submitButton ) return
 
     if (submitButton) {
-      if ( fields.readerUsername !== "" && fields.readerPassword !== "" && fields.primaryServer == "https://app1.ticketwork.com.br" ) {
+      if ( fields.readerUsername !== "" && fields.readerPassword !== "" && fields.primaryServer === "https://app1.ticketwork.com.br" ) {
         submitButton.classList.remove('disabled');
         setDisabled(false)
       } else {
